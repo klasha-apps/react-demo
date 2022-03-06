@@ -25,16 +25,16 @@ const Checkout = () => {
                             <div>
                                 <div className='flex items-center justify-between'>
                                     <h5>1. Address details</h5>
-                                    <span className='text-custom-one cursor-pointer'>change</span>
+                                    <span className='text-custom-one cursor-pointer'>Change</span>
                                 </div>
-                                <h6 className='mt-10'>Ada Adiche</h6>
-                                <p className='text-gray-400 text-sm'>Plot 6 & 7 Elemo Layout, Off Oda Road, Akure-Oda Road, Ondo +2349071603960</p>
+                                <h6 className='mt-10 text-sm'>Ada Adiche</h6>
+                                <p className='text-gray-400 text-xs'>Plot 6 & 7 Elemo Layout, Off Oda Road, Akure-Oda Road, Ondo +2349071603960</p>
                             </div>
 
                             <div className='my-20'>
                                 <h5>2. Delivery method</h5>
-                                <p className='text-gray-400 text-sm'>How do you want your order delivered?</p>
-                                <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-10 items-center'>
+                                <p className='text-gray-400 text-xs'>How do you want your order delivered?</p>
+                                <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-10 items-center mt-10'>
                                     <div className='space-x-2'>
                                         <input type={'radio'} id='door-delivery' name='delivery-method' checked />
                                         <label for='door-delivery'>Door delivery</label>
@@ -48,8 +48,8 @@ const Checkout = () => {
 
                             <div className='my-20'>
                                 <h5>3. Payment method</h5>
-                                <p className='text-gray-400 text-sm'>How do you want to pay?</p>
-                                <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-5 items-center'>
+                                <p className='text-gray-400 text-xs'>How do you want to pay?</p>
+                                <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-5 items-center mt-10'>
                                     <div className='space-x-2'>
                                         <input type={'radio'} id='pay-with-klasha' name='payment-method' checked />
                                         <label for='pay-with-klasha'>Pay with klasha</label>
