@@ -1,5 +1,5 @@
 import { useKlashaPayment } from 'react-klasha'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Layout from '../components/General/Layout'
 import { useCart } from '../contexts/cart'
 import { klashaConfig } from '../utils/helperVariables'
@@ -7,8 +7,12 @@ import { klashaConfig } from '../utils/helperVariables'
 const Checkout = () => {
 
     const [cart] = useCart()
+    const navigate = useNavigate()
 
-    const callBack = (response) => console.log(response, 'Hello world')
+    const callBack = response => {
+        console.log(response)
+        navigate('/')
+    }
 
     const initializePayment = useKlashaPayment(klashaConfig)
 
@@ -36,12 +40,12 @@ const Checkout = () => {
                                 <p className='text-gray-400 text-xs'>How do you want your order delivered?</p>
                                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-10 items-center mt-10'>
                                     <div className='space-x-2'>
-                                        <input type={'radio'} id='door-delivery' name='delivery-method' checked />
-                                        <label for='door-delivery'>Door delivery</label>
+                                        <input type={'radio'} id='door-delivery' name='delivery-method' defaultChecked />
+                                        <label htmlFor='door-delivery'>Door delivery</label>
                                     </div>
                                     <div className='space-x-2'>
                                         <input type={'radio'} id='pickup-station' name='delivery-method' />
-                                        <label for='pickup-station'>Pickup station</label>
+                                        <label htmlFor='pickup-station'>Pickup station</label>
                                     </div>
                                 </div>
                             </div>
@@ -51,8 +55,8 @@ const Checkout = () => {
                                 <p className='text-gray-400 text-xs'>How do you want to pay?</p>
                                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-5 items-center mt-10'>
                                     <div className='space-x-2'>
-                                        <input type={'radio'} id='pay-with-klasha' name='payment-method' checked />
-                                        <label for='pay-with-klasha'>Pay with klasha</label>
+                                        <input type={'radio'} id='pay-with-klasha' name='payment-method' defaultChecked />
+                                        <label htmlFor='pay-with-klasha'>Pay with klasha</label>
                                     </div>
                                     <img src='/assets/images/pay-with-klasha.png' alt='pay with klasha' className='w-full' />
                                 </div>

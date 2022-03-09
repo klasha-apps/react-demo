@@ -1,4 +1,5 @@
 export const klashaConfig = {
+    isTestMode: 'dev',
     email: 'yowivig426@goonby.com',
     phone_number: '+2348143108254',
     merchantKey: process.env.REACT_APP_MERCHANT_KEY,
@@ -14,7 +15,7 @@ export const klashaConfig = {
         phone_number: '+2348143108254',
         email: 'yowivig426@goonby.com',
         fullname: 'Dansteve Adekanbi',
-        tx_ref: '',
+        tx_ref: '' + Math.floor((Math.random() * 1000000000) + 1),
         paymentType: '',
     }
 }
