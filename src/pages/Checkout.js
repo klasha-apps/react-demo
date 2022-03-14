@@ -2,7 +2,6 @@ import { useKlashaPayment } from 'react-klasha'
 import { Link, useNavigate } from 'react-router-dom'
 import Layout from '../components/General/Layout'
 import { useCart } from '../contexts/cart'
-import { klashaConfig } from '../utils/helperVariables'
 
 const Checkout = () => {
 
@@ -14,7 +13,28 @@ const Checkout = () => {
         navigate('/')
     }
 
-    const initializePayment = useKlashaPayment(klashaConfig)
+    const initializePayment = useKlashaPayment({
+        isTestMode: 'dev',
+        email: 'yowivig426@goonby.com',
+        phone_number: '+2348143108254',
+        merchantKey: 'W2mbGtdx5vKCepFaUm2CqdzebaVW9z22shubB4xFbKTR3g4sL72+7qNQYHTUEfs0my1e/hAO1Nkdx9YbXTjUOg==',
+        amount: 1000,
+        sourceCurrency: '',
+        destinationCurrency: '',
+        tx_ref: '' + Math.floor((Math.random() * 1000000000) + 1),
+        businessId: '1',
+        fullname: 'Dansteve Adekanbi',
+        paymentDescription: '',
+        kit: {
+            currency: '',
+            phone_number: '+2348143108254',
+            email: 'yowivig426@goonby.com',
+            fullname: 'Dansteve Adekanbi',
+            tx_ref: '' + Math.floor((Math.random() * 1000000000) + 1),
+            paymentType: '',
+            callBack
+        }
+    })
 
     return (
         <Layout>
